@@ -1,7 +1,10 @@
+name: "tabnews"
+
 services:
   database:
+    container_name: "tabnews_database"
     image: "postgres:16.0-alpine3.18"
-    environment:
-      POSTGRES_PASSWORD: "123456"
+    env_file:
+      - ../.env.development
     ports:
       - "5432:5432"
